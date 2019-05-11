@@ -14,7 +14,7 @@ type Person struct {
 }
 
 func getPersonHandler(w http.ResponseWriter, r *http.Request) {
-	// Retrieve people from postgresql database 
+	// Retrieve people from postgresql database
 	personList, err := store.GetPerson()
 
 	// Convert the `personList` variable to JSON
@@ -22,6 +22,7 @@ func getPersonHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(fmt.Errorf("Error: %v", err))
 		w.WriteHeader(http.StatusInternalServerError)
+		http.Redirect(w, r, "https://s3.amazonaws.com/go-app/index2.html", 301)
 		return
 	}
 
@@ -34,7 +35,7 @@ func createPersonHandler(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	if err != nil {
 		fmt.Println(fmt.Errorf("Error: %v", err))
-		w.WriteHeader(http.StatusInternalServerError)
+		http.Redirect(w, r, "https://s3.amazonaws.com/go-app/index2.html", 301)
 		return
 	}
 
@@ -48,6 +49,7 @@ func createPersonHandler(w http.ResponseWriter, r *http.Request) {
 	err = store.CreatePerson(&person)
 	if err != nil {
 		fmt.Println(err)
+		http.Redirect(w, r, "https://s3.amazonaws.com/go-app/index2.html", 301)
 	}
 
 	//Redirect to the originating HTML page
