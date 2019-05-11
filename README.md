@@ -1,8 +1,10 @@
 # goapp-ansible-master
 
+The application presents a form and accepts inputs for three values - Name, Favorite color, and a preference of cats or dogs. The Name should be unique, so not providing a name or providing a duplicate value will result in a 400 Bad Status Request. No Worries! The user will be able to navigate back from the error page and try again once more time!.
+
 ## The Go Application
 
-This repo consists of a simple web application built in Golang/Postgres. The application presents an html form at its root and stores its information in a Postgres server in the backend.
+This application is built in Golang/Postgres. The application presents an html form at its root and stores its information in a Postgres server in the backend. 
 
  - The application uses the gorilla/mux, which is a URL router and
    dispatcher for golang.
