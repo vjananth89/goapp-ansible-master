@@ -23,8 +23,6 @@ var store Store
 
 func (store *dbStore) CreatePerson(person *Person) error {
 	// 'Person' is a struct which has "name", "color", and "pet_pref" attributes.
-	// Type SQL query to insert new person into our database.
-	// Note: `peopleinfo` is the name of the table within our `peopleDatabase` postgresql database.
 	_, err := store.db.Query(
 		"INSERT INTO person(name,color,pet_pref) VALUES ($1,$2,$3)",
 		person.Name, person.FavoriteColor, person.PetPref)
