@@ -19,6 +19,8 @@ The project can be tested locally by downloading the contents of the repo `$GOHO
 
 The Postgres server runs locally and can be accessed via port `5432` in the T2 micro EC2 instance that is referenced in the Ansible playbook and the inventory file in the repo. 
 
+The guide for setting up the postgres instance in this project can be found in the link [here](http://postgresguide.com/setup/install.html).
+
     -- Table: public.person
     
     -- DROP TABLE public.person;
@@ -37,4 +39,14 @@ The Postgres server runs locally and can be accessed via port `5432` in the T2 m
 
 ## Ansible Setup Overview
 
+Ansible can be setup using the command below:
+
+    sudo yum install ansible
+
+The `playbook.yml` in the repo has all the steps necessary to download the ssh into the EC2 micro instance and deploy this golang app.
+
+*Note: The playbook will only deploy the instance in the cloud referenced in the inventory file. The inventory file will have to be updated accordingly in order to deploy and test this application on different servers.*
+
 ## EC2 Host Details
+
+This project has been deployed to an EC2 instance in AWS at [http://ec2-34-239-126-166.compute-1.amazonaws.com:8080](http://ec2-34-239-126-166.compute-1.amazonaws.com:8080/)
