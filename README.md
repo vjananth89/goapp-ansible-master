@@ -47,6 +47,13 @@ The `playbook.yml` in the repo has all the steps necessary to download the ssh i
 
 *Note: The playbook will only deploy the instance in the cloud referenced in the inventory file. The inventory file will have to be updated accordingly in order to deploy and test this application on different servers.*
 
+The Ansible Playbook does the following:
+
+ - It cleans up the workspace before a new deploy.
+ - It downloads the artifacts from this repo - [https://github.com/vjananth89/goapp-ansible-master](https://github.com/vjananth89/goapp-ansible-master)
+ - Downloads the packages necessary for this project to be launched (Golang Mux and Postgres pq)
+ - Launches the app!
+
 ## EC2 Host Details
 
 This project has been deployed to an EC2 instance in AWS at [http://ec2-34-239-126-166.compute-1.amazonaws.com:8080](http://ec2-34-239-126-166.compute-1.amazonaws.com:8080/)
