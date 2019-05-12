@@ -1,6 +1,6 @@
 # goapp-ansible-master
 
-The application presents a form and accepts inputs for three values - Name, Favorite color, and a preference of cats or dogs. The Name should be unique, so not providing a name or providing a duplicate value will result in a 400 Bad Status Request. No Worries! The user will be able to navigate back from the error page and try again once more time!.
+The application presents a form and accepts inputs for three values - Name, Favorite color, and a preference of cats or dogs. The Name should be unique, so not providing a name or providing a duplicate value will result in a 400 Bad Status Request. No Worries! The user will be able to navigate back from the error page and try again once more time!
 
 ## The Go Application
 
